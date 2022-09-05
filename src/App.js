@@ -19,10 +19,11 @@ class App extends React.Component {
             <Header />
             <Search />
           </Route>
-          <Route exact path="/album/:id">
-            <Header />
-            <Album />
-          </Route>
+          <Route
+            exact
+            path="/album/:id"
+            render={ (props) => <Album { ...props } /> }
+          />
           <Route exact path="/favorites">
             <Header />
             <Favorites />
