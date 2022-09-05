@@ -7,6 +7,7 @@ import NotFound from './pages/NotFound';
 import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import Search from './pages/Search';
+import Header from './components/Header';
 
 class App extends React.Component {
   render() {
@@ -14,11 +15,26 @@ class App extends React.Component {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={ Login } />
-          <Route exact path="/search" component={ Search } />
-          <Route exact path="/album/:id" component={ Album } />
-          <Route exact path="/favorites" component={ Favorites } />
-          <Route exact path="/profile" component={ Profile } />
-          <Route exact path="/profile/edit" component={ ProfileEdit } />
+          <Route exact path="/search">
+            <Header />
+            <Search />
+          </Route>
+          <Route exact path="/album/:id">
+            <Header />
+            <Album />
+          </Route>
+          <Route exact path="/favorites">
+            <Header />
+            <Favorites />
+          </Route>
+          <Route exact path="/profile">
+            <Header />
+            <Profile />
+          </Route>
+          <Route exact path="/profile/edit">
+            <Header />
+            <ProfileEdit />
+          </Route>
           <Route exact path="/*" component={ NotFound } />
         </Switch>
       </BrowserRouter>
