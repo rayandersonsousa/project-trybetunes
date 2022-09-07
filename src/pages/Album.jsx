@@ -34,6 +34,8 @@ export default class Album extends React.Component {
               key={ index }
               trackName={ song.trackName }
               previewUrl={ song.previewUrl }
+              track={ song }
+              trackId={ song.trackId }
             />
           ))
         }
