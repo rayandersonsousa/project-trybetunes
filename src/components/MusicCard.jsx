@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { addSong } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
 import Loading from '../pages/Loading';
 
 export default class MusicCard extends React.Component {
@@ -8,6 +8,16 @@ export default class MusicCard extends React.Component {
     checked: false,
     loading: false,
   };
+
+  async componentDidMount() {
+    const favorites = await getFavoriteSongs();
+    const { trackId } = this.props;
+    const check = favorites.some((song) => song.trackId === trackId);
+
+    this.setState({
+      checked: check,
+    });
+  }
 
   checkFavorites = async (song) => {
     this.setState({
