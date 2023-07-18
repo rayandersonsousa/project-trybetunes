@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import Loading from './Loading';
 import { createUser } from '../services/userAPI';
+import '../styles/Login.css';
 
 export default class Login extends React.Component {
   state = {
@@ -42,16 +43,19 @@ export default class Login extends React.Component {
   render() {
     const { isDisabled, loading, isRedirecting } = this.state;
     return (
-      <div data-testid="page-login">
+      <div data-testid="page-login" className="page-login-div">
         {(loading) ? <Loading /> : (
-          <section>
-            <h1>Login</h1>
+          <section className="login-container">
+            <h1 className="login-title">Login</h1>
             <input
+              className="login-input"
               type="text"
               data-testid="login-name-input"
               onChange={ this.handleChange }
+              placeholder="Usuário"
             />
             <button
+              className="login-btn"
               type="button"
               data-testid="login-submit-button"
               disabled={ isDisabled }

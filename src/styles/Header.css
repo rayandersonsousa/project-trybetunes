@@ -1,0 +1,19 @@
+.header-component {
+  align-items: baseline;
+  background-color: rgb(80 175 109);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.links-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.links {
+	color: white;
+	text-decoration: none;
+	margin: 0 0.5em;
+}

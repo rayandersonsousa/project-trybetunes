@@ -1,0 +1,28 @@
+.page-profile {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.profile-container {
+  background-color: rgb(248 242 242);
+	box-shadow: 0.5em 0.5em rgb(80 175 109);
+  height: 60vh;
+  min-width: 35vw;
+  max-width: 50vw;
+  margin: 3.5rem 0;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.btn-edit {
+  background-color: rgb(80 175 109);
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  height: 2.5em;
+  transition: 0.2s linear;
+}

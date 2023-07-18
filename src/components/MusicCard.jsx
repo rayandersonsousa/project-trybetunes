@@ -1,42 +1,71 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import Loading from '../pages/Loading';
+import '../styles/MusicCard.css';
 
 export default class MusicCard extends React.Component {
   state = {
-    checked: false,
     loading: false,
+    currentf: [],
   };
 
   async componentDidMount() {
     const favorites = await getFavoriteSongs();
-    const { trackId } = this.props;
-    const check = favorites.some((song) => song.trackId === trackId);
 
     this.setState({
-      checked: check,
+      currentf: favorites,
     });
   }
 
-  checkFavorites = async (song) => {
+  async componentDidUpdate() {
+    const newFavorites = await getFavoriteSongs();
+
+    this.setState({
+      currentf: newFavorites,
+    });
+  }
+
+  checkFavorites = async (song, isTrue) => {
     this.setState({
       loading: true,
     });
-    await addSong(song);
-    this.setState({
-      loading: false,
-      checked: true,
-    });
+    if (isTrue === false) {
+      await addSong(song);
+      this.setState({
+        loading: false,
+      });
+    } else {
+      await removeSong(song);
+      this.setState({
+        loading: false,
+      });
+    }
   };
 
   render() {
     const { trackName, previewUrl, trackId, track } = this.props;
-    const { loading, checked } = this.state;
+    const { loading, currentf } = this.state;
+
+    const isFavorite = currentf.some((song) => song.trackId === trackId);
     return (
       loading ? <Loading /> : (
-        <section>
-          <h3>{trackName}</h3>
+        <section className="section-music-card">
+          <div className="music-card-header">
+            <h3>{trackName}</h3>
+            <label
+              htmlFor={ trackId }
+              data-testid={ `checkbox-music-${trackId}` }
+            >
+              Favorite
+              <input
+                type="checkbox"
+                id={ trackId }
+                checked={ isFavorite }
+                onChange={ () => { this.checkFavorites(track, isFavorite); } }
+              />
+            </label>
+          </div>
           <audio data-testid="audio-component" src={ previewUrl } controls>
             <track kind="captions" />
             O seu navegador não suporta o elemento
@@ -45,18 +74,6 @@ export default class MusicCard extends React.Component {
             <code>audio</code>
             .
           </audio>
-          <label
-            htmlFor={ trackId }
-            data-testid={ `checkbox-music-${trackId}` }
-          >
-            Favorite
-            <input
-              type="checkbox"
-              id={ trackId }
-              checked={ checked }
-              onChange={ () => { this.checkFavorites(track); } }
-            />
-          </label>
         </section>
       )
     );

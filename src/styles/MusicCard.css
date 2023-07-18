@@ -1,0 +1,16 @@
+.section-music-card {
+	background-color: rgb(106 226 142);
+	box-shadow: 0.5em 0.5em rgb(211, 206, 206);
+	font-size: 14px;
+	padding: 0.5em;
+}
+
+.music-card-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.section-music-card audio::-webkit-media-controls-panel {
+	background-color: rgb(106 226 142);
+	border: none;
+}

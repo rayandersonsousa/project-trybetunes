@@ -8,6 +8,7 @@ import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import Search from './pages/Search';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 class App extends React.Component {
   render() {
@@ -18,6 +19,7 @@ class App extends React.Component {
           <Route exact path="/search">
             <Header />
             <Search />
+            <Footer />
           </Route>
           <Route
             exact
@@ -27,14 +29,17 @@ class App extends React.Component {
           <Route exact path="/favorites">
             <Header />
             <Favorites />
+            <Footer />
           </Route>
           <Route exact path="/profile">
             <Header />
             <Profile />
+            <Footer />
           </Route>
           <Route exact path="/profile/edit">
             <Header />
             <ProfileEdit />
+            <Footer />
           </Route>
           <Route exact path="/*" component={ NotFound } />
         </Switch>

@@ -1,0 +1,40 @@
+.container-album-page {
+	display: flex;
+	width: 98vw;
+	justify-content: center;
+}
+
+.info-container {
+	display: flex;
+	justify-content: center;
+	margin: 2rem 0;
+}
+
+.info-container img {
+	height: 150px;
+	width: 150px;
+}
+
+.info-names {
+	padding-left: 1.5rem;
+}
+
+.page-album-container {
+  background-color: rgb(248 242 242);
+	box-shadow: 0.5em 0.5em rgb(80 175 109);
+	margin: 3rem 0;
+	max-width: 700px;
+}
+
+.music-card-container {
+	display: grid;
+	gap: 1em;
+	grid-template-columns: repeat(2, 2fr);
+	padding: 2em;
+}
+
+.artist-name {
+	color: var(--text-color);
+	margin-top: 2rem;
+	text-align: center;
+}

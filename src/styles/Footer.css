@@ -1,0 +1,15 @@
+.footer-container {
+  background-color: rgb(80 175 109);
+  color: white;
+  font-weight: 500;
+  height: 4rem;
+  text-align: center;
+}
+
+.footer-text {
+  margin-top: 3em;
+}
+
+.footer-links {
+  margin: 0.5rem;
+}

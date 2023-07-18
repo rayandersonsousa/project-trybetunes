@@ -2,15 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
 import Loading from '../pages/Loading';
+import '../styles/Header.css';
 
 export default class Header extends React.Component {
   state = {
     user: '',
-    loading: false,
+    loading: true,
   };
 
   async componentDidMount() {
-    this.setState({ loading: true });
     const usuario = await getUser();
     this.setState({
       user: `Bem-vindo, ${usuario.name}`,
@@ -24,12 +24,20 @@ export default class Header extends React.Component {
     return (
       loading ? <Loading />
         : (
-          <header data-testid="header-component">
+          <header data-testid="header-component" className="header-component">
             <h1>Trybe Tunes</h1>
             <p data-testid="header-user-name">{ user }</p>
-            <Link data-testid="link-to-search" to="/search">Busca</Link>
-            <Link data-testid="link-to-favorites" to="/favorites">Favoritos</Link>
-            <Link data-testid="link-to-profile" to="/profile">Perfil</Link>
+            <div className="links-container">
+              <Link data-testid="link-to-search" to="/search" className="links">
+                Busca
+              </Link>
+              <Link data-testid="link-to-favorites" to="/favorites" className="links">
+                Favoritos
+              </Link>
+              <Link data-testid="link-to-profile" to="/profile" className="links">
+                Perfil
+              </Link>
+            </div>
           </header>
         )
     );
