@@ -4,7 +4,7 @@ Projeto desenvolvido durante o módulo de Front-end do curso de desenvolvimento 
 
 ## Sobre o projeto
 
-Neste projeto desenvolvi uma aplicação para pesquisar e listar álbuns e músicas de várias bandas e artistas.
+Neste projeto desenvolvi uma aplicação para pesquisar e listar álbuns e músicas de várias bandas e artistas. Você pode conferirir esta aplicação funcionando [neste link](https://project-trybetunes-eight.vercel.app/).
 
 Nesta aplicação é possível:
    - Pesquisar e listar álbuns e músicas de várias bandas e artistas.
