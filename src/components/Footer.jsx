@@ -9,13 +9,28 @@ export default class Footer extends React.Component {
           Desenvolvido por Rayanderson Sousa
         </span>
         <div className="footer-links">
-          <a href="https://www.linkedin.com/in/rayanderson-sousa/" className="links" target="_blank" >
+          <a
+            href="https://www.linkedin.com/in/rayanderson-sousa/"
+            className="links"
+            target="_blank"
+            rel="noreferrer"
+          >
             <i className="fa-brands fa-linkedin-in" />
           </a>
-          <a href="https://github.com/rayandersonsousa" className="links" target="_blank">
+          <a
+            href="https://github.com/rayandersonsousa"
+            className="links"
+            target="_blank"
+            rel="noreferrer"
+          >
             <i className="fa-brands fa-github" />
           </a>
-          <a href="https://rayanderson-sousa-portifolio.vercel.app/" className="links" target="_blank">
+          <a
+            href="https://rayanderson-sousa-portifolio.vercel.app/"
+            className="links"
+            target="_blank"
+            rel="noreferrer"
+          >
             <i className="fa-solid fa-globe" />
           </a>
         </div>
