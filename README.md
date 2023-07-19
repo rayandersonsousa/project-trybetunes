@@ -11,6 +11,13 @@ Nesta aplicação é possível:
    - Ouvir o preview de cada música.
    - Favoritar suas músicas preferidas.
 
+## Imagens do projeto
+
+![image](trybe-tunes-login.png)
+
+
+![image](trybe-tunes-mainpage.png)
+
 ## Rodando o projeto
 
 1. Clone o repositório
